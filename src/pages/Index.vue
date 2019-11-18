@@ -7,7 +7,8 @@
     <input 
       v-model="message" 
       @keyup.esc="clearMessage" 
-      @keyup.enter="alertMessage" />
+      @keyup.enter="alertMessage" 
+      v-autofocus/>
     <button @click="clearMessage">Clear</button>
     <h5 
       v-if="message.length"
@@ -45,6 +46,13 @@ export default {
   filters: {
     messageLowercase(value) {
       return value.toLowerCase()
+    }
+  },
+  directives: {
+    autofocus: {
+      inserted(el) {
+        el.focus()
+      }
     }
   }
 };
