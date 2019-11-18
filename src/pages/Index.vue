@@ -28,7 +28,7 @@
 export default {
   data() {
     return {
-      message: "I love Vue.js very much ",
+      message: "I love Vue",
       counter: 0
     };
   },
@@ -64,6 +64,31 @@ export default {
         el.focus()
       }
     }
+  },
+  // Lifecycle Hooks in action
+  beforeCreate()  {
+    console.log('beforeCreate')
+  },
+  created() {
+    console.log('created')
+  },
+  beforeMount() {
+    console.log('beforeMount')
+  },
+  mounted() {
+    console.log('mounted')
+  },
+  beforeUpdate() {
+    console.log('beforeUpdate')
+  },
+  updated() {
+    console.log('updated')
+  },
+  beforeDestroy() {
+    console.log('beforeDestroy')
+  },
+  destroyed() {
+    console.log('destroyed')
   }
 };
 </script>
