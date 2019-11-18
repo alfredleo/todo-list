@@ -8,8 +8,11 @@
       v-model="message" 
       @keyup.esc="clearMessage" 
       @keyup.enter="alertMessage" 
-      v-autofocus/>
+      v-autofocus
+      :class="{'error': message.length > 22}"
+      :style="errorStyle"/>
     <button @click="clearMessage">Clear</button>
+    <div>{{message.length}}</div>
     <h5 
       v-if="message.length"
       class="border-grey">{{message}}</h5>
@@ -33,6 +36,13 @@ export default {
     messageUppercase() {
       console.log('messageUppercase was fired')
       return this.message.toUpperCase()
+    }, 
+    errorStyle() {
+      if(this.message.length > 10) {
+        return {
+          'background': 'gray'
+        }
+      }
     }
   },
   methods: {
@@ -61,5 +71,12 @@ export default {
 <style>
 .border-grey {
   border: 1px solid grey;
+}
+input, button {
+  font-size: 23px; 
+}
+.error {
+  color: red;
+  background: pink;
 }
 </style>
