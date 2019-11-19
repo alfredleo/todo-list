@@ -10,7 +10,7 @@
       @keyup.enter="alertMessage" 
       v-autofocus
       :class="{'error': message.length > 22}"
-      :style="errorStyle"/>
+      ref="messageInput"/>
     <button @click="clearMessage">Clear</button>
     <div>{{message.length}}</div>
     <h5 
@@ -66,29 +66,9 @@ export default {
     }
   },
   // Lifecycle Hooks in action
-  beforeCreate()  {
-    console.log('beforeCreate')
-  },
-  created() {
-    console.log('created')
-  },
-  beforeMount() {
-    console.log('beforeMount')
-  },
   mounted() {
-    console.log('mounted')
-  },
-  beforeUpdate() {
-    console.log('beforeUpdate')
-  },
-  updated() {
-    console.log('updated')
-  },
-  beforeDestroy() {
-    console.log('beforeDestroy')
-  },
-  destroyed() {
-    console.log('destroyed')
+    console.log(this.$refs)
+    this.$refs.messageInput.className = 'bg-green' // Bad example
   }
 };
 </script>
