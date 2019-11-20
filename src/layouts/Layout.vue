@@ -29,7 +29,13 @@
       </q-tabs>
     </q-footer>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-2">
+    <q-drawer
+      v-model="leftDrawerOpen"
+      show-if-above
+      :breakpoint="767"
+      bordered
+      content-class="bg-grey-2"
+    >
       <q-list>
         <q-item-label header>Navigation</q-item-label>
         <q-item v-for="nav in navs" :key="nav.label" :to="nav.to" exact clickable>
@@ -72,3 +78,11 @@ export default {
   }
 };
 </script>
+
+<style>
+@media screen and (min-width: 768px) {
+  .q-footer {
+    display: none;
+  }
+}
+</style>
