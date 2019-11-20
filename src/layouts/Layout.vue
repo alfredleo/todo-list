@@ -2,9 +2,7 @@
   <q-layout view="hHh LpR fFf">
     <q-header elevated>
       <q-toolbar>
-
         <q-toolbar-title class="absolute-center">Awesome Todo</q-toolbar-title>
-
       </q-toolbar>
     </q-header>
 
@@ -30,7 +28,14 @@
     >
       <q-list dark>
         <q-item-label header>Navigation</q-item-label>
-        <q-item v-for="nav in navs" :key="nav.label" :to="nav.to" exact clickable class="text-grey-4">
+        <q-item
+          v-for="nav in navs"
+          :key="nav.label"
+          :to="nav.to"
+          exact
+          clickable
+          class="text-grey-4"
+        >
           <q-item-section avatar>
             <q-icon :name="nav.icon" />
           </q-item-section>
@@ -71,13 +76,15 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @media screen and (min-width: 768px) {
   .q-footer {
     display: none;
   }
-  .q-drawer .q-router-link--exact-active {
-    color: white !important;
+  .q-drawer {
+    .q-router-link--exact-active {
+      color: darksalmon !important;
+    }
   }
 }
 </style>
