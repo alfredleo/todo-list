@@ -3,6 +3,7 @@
     <ul>
       <task v-for="(task,index) in tasks" v-bind:key="task.id"
       :task="task"
+      :tasks="tasks"
       :index="index">{{task.name}}</task>
     </ul>
   </q-page>
@@ -32,11 +33,6 @@ export default {
           dueTime: '16:30'
         }
       ]
-    }
-  }, 
-  methods: {
-    deleteTask(index) {
-      this.tasks.splice(index,1)
     }
   },
   components: {
