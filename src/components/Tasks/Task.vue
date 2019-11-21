@@ -48,7 +48,7 @@ export default {
           persistent: true
         })
         .onOk(() => {
-          console.log(">>>> OK");
+          console.log(">>>> deleting " + id );
         })
         .onOk(() => {
           //   console.log('>>>> second OK catcher')
