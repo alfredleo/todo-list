@@ -2,7 +2,7 @@ const state = {
     tasks: [
         {
             id: 1,
-            name: "Go to shop",
+            name: "Go to shop-----------",
             completed: false,
             dueDate: "2019/05/12",
             dueTime: "18:30"
@@ -33,7 +33,9 @@ const actions = {
 }
 
 const getters = {
-
+    tasks: (state) => {
+        return state.tasks
+    }
 }
 
 export default {
