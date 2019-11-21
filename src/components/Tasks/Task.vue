@@ -26,6 +26,10 @@
         </div>
       </div>
     </q-item-section>
+
+    <q-item-section side>
+      <q-btn flat round color="red" icon="delete" dense @click.stop="promptToDelete(id)" />
+    </q-item-section>
   </q-item>
 </template>
 
@@ -34,7 +38,28 @@ import { mapActions } from "vuex";
 export default {
   props: ["task", "id"],
   methods: {
-    ...mapActions("tasks", ["updateTask"])
+    ...mapActions("tasks", ["updateTask"]),
+    promptToDelete(id) {
+      this.$q
+        .dialog({
+          title: "Confirm",
+          message: "Really delete?",
+          cancel: true,
+          persistent: true
+        })
+        .onOk(() => {
+          console.log(">>>> OK");
+        })
+        .onOk(() => {
+          //   console.log('>>>> second OK catcher')
+        })
+        .onCancel(() => {
+          //   console.log('>>>> Cancel')
+        })
+        .onDismiss(() => {
+          //   console.log('I am triggered on both OK and Cancel')
+        });
+    }
   }
 };
 </script>
