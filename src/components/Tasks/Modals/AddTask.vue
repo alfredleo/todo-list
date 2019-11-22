@@ -10,17 +10,48 @@
     </q-card-section>
 
     <q-card-section>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet
-      porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro
-      labore.
+      <div class="row q-mb-sm">
+        <q-input outlined
+                 class="col"
+                 v-model="taskToSubmit.name"
+                 label="Task name"/>
+      </div>
+
+      <div class="row q-mb-sm">
+        <q-input
+          label="Due date"
+          outlined
+          v-model="taskToSubmit.dueDate">
+          <template v-slot:append>
+            <q-icon name="event" class="cursor-pointer">
+              <q-popup-proxy ref="qDateProxy" transition-show="scale" transition-hide="scale">
+                <q-date v-model="taskToSubmit.dueDate" @input="() => $refs.qDateProxy.hide()"/>
+              </q-popup-proxy>
+            </q-icon>
+          </template>
+        </q-input>
+      </div>
+
+      <div class="row q-mb-sm">
+        <q-input outlined
+                 label="Due time"
+                 v-model="taskToSubmit.dueTime">
+          <template v-slot:append>
+            <q-icon name="access_time" class="cursor-pointer">
+              <q-popup-proxy transition-show="scale" transition-hide="scale">
+                <q-time v-model="taskToSubmit.dueTime"/>
+              </q-popup-proxy>
+            </q-icon>
+          </template>
+        </q-input>
+      </div>
     </q-card-section>
 
     <q-card-actions align="right">
-      <q-btn
-        flat
-        label="Save"
-        color="primary"
-        v-close-popup/>
+      <q-btn flat
+             label="Save"
+             color="primary"
+             v-close-popup/>
     </q-card-actions>
   </q-card>
 </template>
@@ -29,7 +60,14 @@
     export default {
         name: 'add-task',
         data() {
-            return {}
+            return {
+                taskToSubmit: {
+                    name: "Hello",
+                    dueDate: "23.11.2019",
+                    dueTime: "",
+                    completed: false
+                }
+            }
         }
     }
 </script>
