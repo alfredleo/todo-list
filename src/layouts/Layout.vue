@@ -37,7 +37,7 @@
           class="text-grey-4"
         >
           <q-item-section avatar>
-            <q-icon :name="nav.icon" />
+            <q-icon :name="nav.icon"/>
           </q-item-section>
           <q-item-section>
             <q-item-label>{{nav.label}}</q-item-label>
@@ -47,44 +47,44 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view/>
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-export default {
-  name: "Layout",
+    export default {
+        name: "Layout",
 
-  data() {
-    return {
-      leftDrawerOpen: false,
-      navs: [
-        {
-          label: "Todo",
-          icon: "list",
-          to: "/"
-        },
-        {
-          label: "Settings",
-          icon: "settings",
-          to: "/settings"
+        data() {
+            return {
+                leftDrawerOpen: false,
+                navs: [
+                    {
+                        label: "Todo",
+                        icon: "list",
+                        to: "/"
+                    },
+                    {
+                        label: "Settings",
+                        icon: "settings",
+                        to: "/settings"
+                    }
+                ]
+            };
         }
-      ]
     };
-  }
-};
 </script>
 
 <style lang="scss">
-@media screen and (min-width: 768px) {
-  .q-footer {
-    display: none;
-  }
-  .q-drawer {
-    .q-router-link--exact-active {
-      color: darksalmon !important;
+  @media screen and (min-width: 768px) {
+    .q-footer {
+      display: none;
+    }
+    .q-drawer {
+      .q-router-link--exact-active {
+        color: darksalmon !important;
+      }
     }
   }
-}
 </style>

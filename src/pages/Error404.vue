@@ -4,7 +4,7 @@
       <img
         src="~assets/sad.svg"
         style="width:30vw;max-width:150px;"
-      >
+       alt="sad">
     </p>
     <p class="text-faded">Sorry, nothing here...<strong>(404)</strong></p>
     <q-btn
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-export default {
-  name: 'Error404'
-}
+    export default {
+        name: 'Error404'
+    }
 </script>
