@@ -2,6 +2,10 @@
 
 A Quasar Framework app
 
+## Useful links
+[Quasar docs](https://quasar.dev/start/pick-quasar-flavour)
+[Material icons](https://material.io/resources/icons/?style=baseline)
+
 ## Install the dependencies
 ```bash
 npm install
