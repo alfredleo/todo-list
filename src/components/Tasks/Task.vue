@@ -49,15 +49,6 @@ export default {
         })
         .onOk(() => {
           console.log(">>>> deleting " + id );
-        })
-        .onOk(() => {
-          //   console.log('>>>> second OK catcher')
-        })
-        .onCancel(() => {
-          //   console.log('>>>> Cancel')
-        })
-        .onDismiss(() => {
-          //   console.log('I am triggered on both OK and Cancel')
         });
     }
   }
