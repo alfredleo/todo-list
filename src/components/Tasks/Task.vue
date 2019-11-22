@@ -38,7 +38,7 @@ import { mapActions } from "vuex";
 export default {
   props: ["task", "id"],
   methods: {
-    ...mapActions("tasks", ["updateTask"]),
+    ...mapActions("tasks", ["updateTask", "deleteTask"]),
     promptToDelete(id) {
       this.$q
         .dialog({
@@ -48,7 +48,7 @@ export default {
           persistent: true
         })
         .onOk(() => {
-          console.log(">>>> deleting " + id );
+          this.deleteTask(id)
         });
     }
   }
