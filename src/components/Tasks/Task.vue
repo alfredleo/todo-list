@@ -48,9 +48,10 @@
 
 <script>
     import {mapActions} from "vuex";
-    import EditTask from "./Modals/EditTask";
+    import EditTask from "src/components/Tasks/Modals/EditTask";
 
     export default {
+        name: 'task',
         components: {EditTask},
         props: ["task", "id"],
         data() {

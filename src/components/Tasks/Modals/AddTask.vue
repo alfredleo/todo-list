@@ -19,11 +19,11 @@
 
 <script>
     import {mapActions} from 'vuex'
-    import ModalHeader from "./Shared/ModalHeader";
-    import ModalTaskName from "./Shared/ModalTaskName";
-    import ModalTaskDueDate from "./Shared/ModalTaskDueDate";
-    import ModalTaskDueTime from "./Shared/ModalTaskDueTime";
-    import ModalButtons from "./Shared/ModalButtons";
+    import ModalHeader from "src/components/Tasks/Modals/Shared/ModalHeader";
+    import ModalTaskName from "src/components/Tasks/Modals/Shared/ModalTaskName";
+    import ModalTaskDueDate from "src/components/Tasks/Modals/Shared/ModalTaskDueDate";
+    import ModalTaskDueTime from "src/components/Tasks/Modals/Shared/ModalTaskDueTime";
+    import ModalButtons from "src/components/Tasks/Modals/Shared/ModalButtons";
 
     export default {
         name: 'add-task',

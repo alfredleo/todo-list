@@ -9,7 +9,7 @@
 
 <script>
     export default {
-        name: 'ModalButtons',
+        name: 'modal-buttons',
         data() {
             return {}
         }

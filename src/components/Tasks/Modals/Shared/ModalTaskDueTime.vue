@@ -20,7 +20,7 @@
 
 <script>
     export default {
-        name: 'ModalTaskDueTime',
+        name: 'modal-task-due-time',
         data() {
             return {}
         },

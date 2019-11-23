@@ -14,7 +14,7 @@
 
 <script>
     export default {
-        name: 'ModalTaskName',
+        name: 'modal-task-name',
         props: ['name'],
         data() {
             return {}

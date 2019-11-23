@@ -30,7 +30,8 @@
 
 <script>
     import {mapGetters} from "vuex";
-    import AddTask from "../components/Tasks/Modals/AddTask";
+    import AddTask from "src/components/Tasks/Modals/AddTask";
+    import Task from "src/components/Tasks/Task";
 
     export default {
         data() {
@@ -41,10 +42,7 @@
         computed: {
             ...mapGetters("tasks", ["tasks"])
         },
-        components: {
-            AddTask,
-            task: require("components/Tasks/Task.vue").default
-        }
+        components: {Task, AddTask}
     };
 </script>
 
