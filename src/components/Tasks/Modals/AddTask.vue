@@ -6,21 +6,7 @@
       <q-card-section>
         <modal-task-name :name.sync="taskToSubmit.name"/>
 
-        <div class="row q-mb-sm">
-          <q-input
-            label="Due date"
-            outlined
-            clearable
-            v-model="taskToSubmit.dueDate">
-            <template v-slot:append>
-              <q-icon name="event" class="cursor-pointer">
-                <q-popup-proxy ref="qDateProxy" transition-show="scale" transition-hide="scale">
-                  <q-date v-model="taskToSubmit.dueDate" @input="() => $refs.qDateProxy.hide()"/>
-                </q-popup-proxy>
-              </q-icon>
-            </template>
-          </q-input>
-        </div>
+        <modal-task-due-date :dueDate.sync="taskToSubmit.dueDate"/>
 
         <div
           v-if="taskToSubmit.dueDate"
@@ -56,10 +42,11 @@
     import {mapActions} from 'vuex'
     import ModalHeader from "./Shared/ModalHeader";
     import ModalTaskName from "./Shared/ModalTaskName";
+    import ModalTaskDueDate from "./Shared/ModalTaskDueDate";
 
     export default {
         name: 'add-task',
-        components: {ModalTaskName, ModalHeader},
+        components: {ModalTaskDueDate, ModalTaskName, ModalHeader},
         data() {
             return {
                 taskToSubmit: {
