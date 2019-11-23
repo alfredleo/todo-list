@@ -4,16 +4,7 @@
 
     <q-form @submit="submitForm">
       <q-card-section>
-        <div class="row q-mb-sm">
-          <q-input outlined
-                   clearable
-                   class="col"
-                   v-model="taskToSubmit.name"
-                   :rules="[val => !!val || 'Field is required']"
-                   ref="name"
-                   autofocus
-                   label="Task name"/>
-        </div>
+        <modal-task-name :name.sync="taskToSubmit.name"/>
 
         <div class="row q-mb-sm">
           <q-input
@@ -56,6 +47,7 @@
           color="primary"
           type="submit"/>
       </q-card-actions>
+      <pre>{{taskToSubmit}}</pre>
     </q-form>
   </q-card>
 </template>
@@ -63,10 +55,11 @@
 <script>
     import {mapActions} from 'vuex'
     import ModalHeader from "./Shared/ModalHeader";
+    import ModalTaskName from "./Shared/ModalTaskName";
 
     export default {
         name: 'add-task',
-        components: {ModalHeader},
+        components: {ModalTaskName, ModalHeader},
         data() {
             return {
                 taskToSubmit: {
