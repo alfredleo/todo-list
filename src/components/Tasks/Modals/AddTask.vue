@@ -61,6 +61,8 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
+
     export default {
         name: 'add-task',
         data() {
@@ -74,18 +76,11 @@
             }
         },
         methods: {
+            ...mapActions('tasks', ['addTask']),
             submitForm() {
-                // this whole section is not needed if you use q-form element. it has those checks
-                // by default
-                console.log('submitForm');
-                this.$refs.name.validate()
-                if (!this.$refs.name.hasError) {
-                    this.submitTask();
-                }
+                this.addTask(this.taskToSubmit);
+                this.$emit('close')
             },
-            submitTask() {
-                console.log('submit task');
-            }
         }
     }
 </script>
