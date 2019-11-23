@@ -10,14 +10,9 @@
 
         <modal-task-due-time :dueTime.sync="taskToSubmit.dueTime" v-if="taskToSubmit.dueDate"/>
       </q-card-section>
-
-      <q-card-actions align="right">
-        <q-btn
-          label="Save"
-          color="primary"
-          type="submit"/>
-      </q-card-actions>
+      <modal-buttons/>
       <pre>{{taskToSubmit}}</pre>
+
     </q-form>
   </q-card>
 </template>
@@ -28,10 +23,11 @@
     import ModalTaskName from "./Shared/ModalTaskName";
     import ModalTaskDueDate from "./Shared/ModalTaskDueDate";
     import ModalTaskDueTime from "./Shared/ModalTaskDueTime";
+    import ModalButtons from "./Shared/ModalButtons";
 
     export default {
         name: 'add-task',
-        components: {ModalTaskDueTime, ModalTaskDueDate, ModalTaskName, ModalHeader},
+        components: {ModalButtons, ModalTaskDueTime, ModalTaskDueDate, ModalTaskName, ModalHeader},
         data() {
             return {
                 taskToSubmit: {
