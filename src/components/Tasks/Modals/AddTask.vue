@@ -1,13 +1,6 @@
 <template>
   <q-card>
-    <q-card-section class="row">
-      <div class="text-h6">Add Task</div>
-      <q-space/>
-      <q-btn flat round dense
-             v-close-popup
-             color="primary"
-             icon="close"/>
-    </q-card-section>
+    <modal-header>Add Task</modal-header>
 
     <q-form @submit="submitForm">
       <q-card-section>
@@ -69,9 +62,11 @@
 
 <script>
     import {mapActions} from 'vuex'
+    import ModalHeader from "./Shared/ModalHeader";
 
     export default {
         name: 'add-task',
+        components: {ModalHeader},
         data() {
             return {
                 taskToSubmit: {
