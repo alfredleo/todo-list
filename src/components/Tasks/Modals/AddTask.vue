@@ -13,10 +13,12 @@
       <q-card-section>
         <div class="row q-mb-sm">
           <q-input outlined
+                   clearable
                    class="col"
                    v-model="taskToSubmit.name"
                    :rules="[val => !!val || 'Field is required']"
                    ref="name"
+                   autofocus
                    label="Task name"/>
         </div>
 
@@ -24,6 +26,7 @@
           <q-input
             label="Due date"
             outlined
+            clearable
             v-model="taskToSubmit.dueDate">
             <template v-slot:append>
               <q-icon name="event" class="cursor-pointer">
@@ -35,9 +38,13 @@
           </q-input>
         </div>
 
-        <div class="row q-mb-sm">
+        <div
+          v-if="taskToSubmit.dueDate"
+          class="row q-mb-sm">
           <q-input outlined
+                   clearable
                    label="Due time"
+                   class="col"
                    v-model="taskToSubmit.dueTime">
             <template v-slot:append>
               <q-icon name="access_time" class="cursor-pointer">
