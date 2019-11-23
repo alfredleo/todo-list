@@ -8,23 +8,7 @@
 
         <modal-task-due-date :dueDate.sync="taskToSubmit.dueDate"/>
 
-        <div
-          v-if="taskToSubmit.dueDate"
-          class="row q-mb-sm">
-          <q-input outlined
-                   clearable
-                   label="Due time"
-                   class="col"
-                   v-model="taskToSubmit.dueTime">
-            <template v-slot:append>
-              <q-icon name="access_time" class="cursor-pointer">
-                <q-popup-proxy transition-show="scale" transition-hide="scale">
-                  <q-time v-model="taskToSubmit.dueTime"/>
-                </q-popup-proxy>
-              </q-icon>
-            </template>
-          </q-input>
-        </div>
+        <modal-task-due-time :dueTime.sync="taskToSubmit.dueTime" v-if="taskToSubmit.dueDate"/>
       </q-card-section>
 
       <q-card-actions align="right">
@@ -43,10 +27,11 @@
     import ModalHeader from "./Shared/ModalHeader";
     import ModalTaskName from "./Shared/ModalTaskName";
     import ModalTaskDueDate from "./Shared/ModalTaskDueDate";
+    import ModalTaskDueTime from "./Shared/ModalTaskDueTime";
 
     export default {
         name: 'add-task',
-        components: {ModalTaskDueDate, ModalTaskName, ModalHeader},
+        components: {ModalTaskDueTime, ModalTaskDueDate, ModalTaskName, ModalHeader},
         data() {
             return {
                 taskToSubmit: {
