@@ -26,7 +26,7 @@
     import ModalButtons from "./Shared/ModalButtons";
 
     export default {
-        name: 'add-task',
+        name: 'EditTask',
         components: {ModalButtons, ModalTaskDueTime, ModalTaskDueDate, ModalTaskName, ModalHeader},
         data() {
             return {
