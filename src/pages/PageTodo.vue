@@ -2,10 +2,10 @@
   <q-page class="q-pa-md">
     <q-list
       bordered
-      v-if="Object.keys(tasks).length"
+      v-if="Object.keys(tasksTodo).length"
       separator>
       <task
-        v-for="(task,key) in tasks"
+        v-for="(task,key) in tasksTodo"
         :key="key"
         :task="task"
         :id="key"></task>
@@ -40,7 +40,7 @@
             }
         },
         computed: {
-            ...mapGetters("tasks", ["tasks"])
+            ...mapGetters("tasks", ["tasksTodo"])
         },
         components: {Task, AddTask}
     };
