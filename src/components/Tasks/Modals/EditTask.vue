@@ -35,9 +35,12 @@
             }
         },
         methods: {
-            ...mapActions('tasks', ['addTask']),
+            ...mapActions('tasks', ['updateTask']),
             submitForm() {
-                this.addTask(this.taskToSubmit);
+                this.updateTask({
+                    id: this.id,
+                    updates: this.taskToSubmit
+                });
                 this.$emit('close')
             },
         },
