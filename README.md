@@ -32,3 +32,6 @@ keytool -importkeystore -srckeystore quasar-release-key.jks -destkeystore quasar
 keytool -genkey -v -keystore quasar-debug-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias quasar-debug
 keytool -importkeystore -srckeystore quasar-debug-key.jks -destkeystore quasar-debug-key.jks -deststoretype pkcs12
 ``
+
+Now, instead of running quasar dev or quasar build, you would run yarn cordova:dev or yarn cordova:build respectively.
+See [Configuring app sign](https://medium.com/quasar-framework/quasar-sign-a-apk-while-building-ee09039c0995).
